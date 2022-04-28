@@ -1,0 +1,15 @@
+*{
+    text-decoration: none;
+}
+.h-screen{
+    height: 100vh;
+}
+.h-max{
+    height: max-content;
+}
+.w-full{
+    width: 100%;
+}
+.btn-block{
+    display: block;
+}
