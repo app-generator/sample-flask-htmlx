@@ -57,8 +57,9 @@ def signup():
             return redirect(url_for('auth.signin'))
 
     return render_template('signup.html',form=form)
-@login_required
+
 @auth.route('/signout')
+@login_required
 def signout():
     logout_user()
     flash("Logout successful",category="success")

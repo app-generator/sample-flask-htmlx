@@ -4,6 +4,6 @@
 {% block content %}
 <div class="container">
     <h2 class="text-center text-dark">Welcome Back! {{user.name}}</h2>
-    <a class="btn btn-danger" href="{{url_for('auth.signout')}}" hx-target=".container" hx-swap="innerHTML" >Sign Out</a>
+    <a class="btn btn-danger" hx-push-url="true" hx-get="{{url_for('auth.signout')}}" hx-target=".content" hx-swap="innerHTML" >Sign Out</a>
 </div>
 {% endblock content %}

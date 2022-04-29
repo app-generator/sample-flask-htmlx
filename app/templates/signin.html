@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="h-screen d-flex d-sm-flex align-items-center justify-content-center">
-    <form method="post" hx-swap=""outerHTML hx-post="{{ url_for('auth.signin') }}" class="p-5  shadow-sm bg-success h-max col-sm-8 col-md-6 col-lg-4" novalidate >
+    <form  hx-swap="outerHTML" hx-post="{{ url_for('auth.signin') }}" hx-push-url="true" hx-target=".content" class="p-5  shadow-sm bg-success mh-100 col-sm-8 col-md-6 col-lg-4" novalidate >
         <p class="h3 text-center p-2">SignIn</p>
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}

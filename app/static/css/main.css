@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
 *{
     text-decoration: none;
+    font-family: 'Poppins' sans-serif !important;
 }
 .h-screen{
     height: 100vh;
@@ -12,4 +14,12 @@
 }
 .btn-block{
     display: block;
+}
+.font-black{
+    font-family: 'Poppins' sans-serif !important;
+    font-weight: 900 !important;
+    word-spacing: 5px;
+}
+.font-bold{
+    font-weight: 400;
 }

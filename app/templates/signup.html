@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="h-screen d-md-flex align-items-center justify-content-center">
-    <form id="form" method="post" hx-post="{{ url_for('auth.signup') }}" class="p-5 col-md-4 shadow-sm bg-success h-max"
+    <form id="form" method="post" hx-post="{{ url_for('auth.signup') }}" class="p-5 col-md-4 shadow-sm bg-success mh-100"
         novalidate>
         <p class="h3 text-center p-2">SignUp</p>
         {% with messages = get_flashed_messages(with_categories=true) %}

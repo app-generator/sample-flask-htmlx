@@ -1,11 +1,209 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Flask Login Example
-</h1>
-<h2 class="subtitle">
-  Easy authentication and authorization in Flask.
-</h2>
-<button><a href="{{url_for('auth.signin')}}" >Login</a> </button>
+<nav class="navbar navbar-expand-lg navbar-light sticky-sm-top p-4 bg-white  ">
+  <a class="navbar-brand font-black display-1" href="#">Swift Team</a>
+  <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto pe-4">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">About </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('auth.signin')}}">Signin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('auth.signup')}}">Signup</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<div class="container ">
+  <div class="container d-flex p-5 align-items-center">
+    <div class="p-4">
+      <p class="h1 font-black">Let's scale your business</p>
+      <p class="text-dark text-muted h5">Hire professionals who will help your business make 10X your
+        previous income.
+        With over 5years experience in Marketing & Business strategy, we are your best client.
+      </p>
+      <button class="btn btn-primary px-5 py-2 ">Hire Us</button>
+    </div>
+    <div class="p-4 ">
+      <img src="https://react-mui-landing-page.appseed-srv1.com/static/media/myteam.25705d76cc71ec380149.jpg"
+        height="400" alt="">
+    </div>
+  </div>
+
+  <div class="container d-flex p-5 align-items-center">
+    <div class="p-4 text-center bg-light m-1 col-4 h-100 rounded">
+      <span class="material-icons h1 font-black p-5">
+        engineering
+      </span>
+      <p class="h6 text-muted p-4">Through team work, we collaborate and deliver quality projects of high standards</p>
+    </div>
+    <div class="p-4 text-center bg-light m-1 col-4 h-100 rounded">
+      <span class="material-icons h1 font-black p-5">
+        all_inclusive
+      </span>
+      <p class="h6 text-muted p-4">Solving world problems through various web applications using efficient programs and
+        tools</p>
+    </div>
+    <div class="p-4 text-center bg-light m-1 col-4 h-100 rounded">
+      <span class="material-icons h1 font-black p-5">
+        paid
+      </span>
+      <p class="h6 text-muted p-4">Flexible payment plan is applicable to all our services</p>
+    </div>
+  </div>
+
+  <div class="container d-flex p-5 align-items-center w-100">
+    <div class="p-5 ">
+      <img src="https://react-mui-landing-page.appseed-srv1.com/static/media/bestTeams.5ee3d8171c70441d1cc0.jpg"
+        height="400" alt="">
+    </div>
+    <div class="p-4">
+      <p class="h1 font-black">We build, We revive</p>
+      <p class="text-dark text-muted h5">Your business needs to be in safe hands at all times. We ensure you
+        never run out of customers and not run at loss.
+        We are trusted by over 500+ companies to deliver quality marketing campaigns using Digital marketing & Offline
+        marketing channels.
+      </p>
+      <button class="btn btn-primary px-5 py-2 ">Contact Us</button>
+    </div>
+  </div>
+
+  <div class="container d-flex p-5 align-items-center">
+    <div class="p-4 shadow m-1 col-4 h-100 rounded">
+      <p class="h6 text-muted p-4">
+        <span class="material-icons">
+          format_quote
+        </span>
+        The team perfectly fit the specialized skill set required. They focused on the most
+        essential features helping us launch the platform eight months faster than planned.
+        <span class="material-icons">
+          format_quote
+        </span>
+      </p>
+      <div class="d-flex">
+        <img height="50" class="align-self-center rounded-circle me-3"
+          src="https://sweta-myteam-website-fm.netlify.app/static/media/avatar-kady.78fc482c.jpg"
+          alt="Generic placeholder image">
+        <div>
+          <h6 class="mt-0"> Karl Brighton</h6>
+          <p>Software Engineer at Kadex</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-4  shadow m-1 col-4 h-100 rounded">
+      <p class="h6 text-muted p-4">
+        <span class="material-icons">
+          format_quote
+        </span>
+        We needed to automate our entire onboarding process. The team came in and built out
+        the whole journey. Since going live, user retention has gone through the roof!
+        <span class="material-icons">
+          format_quote
+        </span>
+      </p>
+      <div class="d-flex">
+        <img height="50" class="align-self-center rounded-circle me-3"
+          src="https://sweta-myteam-website-fm.netlify.app/static/media/avatar-aiysha.e119a0c1.jpg"
+          alt="Generic placeholder image">
+        <div>
+          <h6 class="mt-0">Krishna Bells</h6>
+          <p>Product Manager at Google</p>
+        </div>
+      </div>
+    </div>
+    <div class="p-4  shadow m-1 col-4 h-100 rounded">
+      <p class="h6 text-muted p-4"><span class="material-icons">
+          format_quote
+        </span>
+        Amazing. Our team helped us build an app that delivered a new experience for hiring
+        a physio. The launch was an instant success with 100k downloads in the first month.
+        <span class="material-icons">
+          format_quote
+        </span>
+      </p>
+      <div class="d-flex">
+        <img height="50" class="align-self-center rounded-circle me-3"
+          src="https://sweta-myteam-website-fm.netlify.app/static/media/avatar-arthur.098c2e26.jpg"
+          alt="Generic placeholder image">
+        <div>
+          <h6 class="mt-0">Ben Spiff</h6>
+          <p>Founder of Crypto</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container d-flex p-5 align-items-center justify-content-center w-100">
+    
+    <form class="col-6" hx-post="{{url_for('main.dashboard')}}" method="post"  novalidate>
+      <p class="text-center font-black h2">Contact Us</p>
+      {{form.csrf_token}}
+      <div class="form-input p-1">
+        {{form.name.label}}
+        {{form.name(class_="form-control")}}
+        {% if form.name.errors %}
+        {% for error in form.name.errors %}
+        <p class="text-danger">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <div class="form-input p-1">
+        {{form.email.label}}
+        {{form.email(class_="form-control")}}
+        {% if form.email.errors %}
+        {% for error in form.email.errors %}
+        <p class="text-danger">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <div class="form-input p-1">
+        {{form.subject.label}}
+        {{form.subject(class_="form-control")}}
+        {% if form.subject.errors %}
+        {% for error in form.subject.errors %}
+        <p class="text-danger">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <div class="form-input p-1">
+        {{form.message.label}}
+        {{form.message(class_="form-control")}}
+        {% if form.message.errors %}
+        {% for error in form.message.errors %}
+        <p class="text-danger">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+      </div>
+
+      <div class="p-2 col-md-12 text-center">
+        <button class="btn py-2 px-5  rounded btn-primary h1" type="submit">Submit</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+<footer>
+  <div class="container p-4">
+    <h6 class="text-center">&copy;2022</h6>
+  </div>
+</footer>
+<script>
+  window.addEventListener('scroll', (e) => {
+    const nav = document.querySelector('.navbar');
+    if (window.pageYOffset > 0) {
+      nav.classList.add("shadow");
+    } else {
+      nav.classList.remove("shadow");
+    }
+  });
+</script>
 {% endblock %}
