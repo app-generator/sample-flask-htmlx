@@ -62,5 +62,5 @@ def signup():
 @login_required
 def signout():
     logout_user()
-    flash("Logout successful",category="success")
+    flash("Signout successful",category="success")
     return redirect(url_for('auth.signin'))

@@ -2,8 +2,8 @@
 {% block title %}SignIn{% endblock title %}
 
 {% block content %}
-<div class="h-screen d-flex d-sm-flex align-items-center justify-content-center">
-    <form  hx-swap="outerHTML" hx-post="{{ url_for('auth.signin') }}" hx-push-url="true" hx-target=".content" class="p-5  shadow-sm bg-success mh-100 col-sm-8 col-md-6 col-lg-4" novalidate >
+<div class="h-screen d-flex d-sm-flex align-items-center justify-content-center bg-light">
+    <form  hx-swap="outerHTML" hx-post="{{ url_for('auth.signin') }}" hx-push-url="true" hx-target=".content" class="p-5 bg-white shadow mh-100 col-sm-8 col-md-6 col-lg-4" novalidate >
         <p class="h3 text-center p-2">SignIn</p>
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -35,6 +35,7 @@
         </div>
         <div class="p-2 col-md-12 text-center">
             <button class="btn p-2 px-3 rounded btn-primary h1" type="submit">Sign In</button>
+            <p class="p-3 ">Don't have an account? <a href="{{url_for('auth.signup')}}">Signup</a></p>
         </div> 
     </form>
 </div>

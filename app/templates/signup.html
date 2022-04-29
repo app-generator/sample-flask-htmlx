@@ -3,8 +3,8 @@
 
 {% block content %}
 
-<div class="h-screen d-md-flex align-items-center justify-content-center">
-    <form id="form" method="post" hx-post="{{ url_for('auth.signup') }}" class="p-5 col-md-4 shadow-sm bg-success mh-100"
+<div class="h-screen d-md-flex align-items-center justify-content-center bg-light">
+    <form id="form" method="post" hx-post="{{ url_for('auth.signup') }}" hx-target=".content" class="p-5 col-md-4 bg-white shadow mh-100"
         novalidate>
         <p class="h3 text-center p-2">SignUp</p>
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -56,6 +56,8 @@
         </div>
         <div class="p-2 col-md-12 text-center">
             <button class="btn p-2 px-3 rounded btn-primary " type="submit">SignUp</button>
+            <p class="p-3 ">Already have an account? <a href="{{url_for('auth.signin')}}">Signin</a></p>
+
         </div>
     </form>
 </div>

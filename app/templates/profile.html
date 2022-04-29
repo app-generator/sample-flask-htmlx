@@ -2,8 +2,23 @@
 {% block title %}Profile{% endblock title %}
 
 {% block content %}
-<div class="container">
-    <h2 class="text-center text-dark">Welcome Back! {{user.name}}</h2>
-    <a class="btn btn-danger" hx-push-url="true" hx-get="{{url_for('auth.signout')}}" hx-target=".content" hx-swap="innerHTML" >Sign Out</a>
+<div class="container bg-light">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for message in messages%}
+    <div class="p-2 col-4 offset-4 h5 text-{{message[0]}}  ">
+        {{ message[1] }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="flex justify-content-center align-content-center">
+        <div class="shadow h-100 mt-5 p-5 text-center bg-white">
+            <h2 class="text-center text-dark">Welcome Back! {{user.name}}</h2>
+            <h3>Email: {{user.email}}</h3>
+            <a class="btn btn-danger" hx-push-url="true" hx-get="{{url_for('auth.signout')}}" hx-target=".content"
+                hx-swap="innerHTML">Sign Out</a>
+        </div>
+    </div>
 </div>
 {% endblock content %}
