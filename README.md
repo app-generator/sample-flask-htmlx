@@ -22,8 +22,14 @@ To get started with the application in the machine
 open terminal or command prompt and enter the following command.
 
 ``` 
-$ git clone < repository name >
+$ git clone git@github.com:app-generator/sample-flask-htmlx.git
 
+ ```
+
+ or use https:
+
+ ```
+ $ git clone https://github.com/app-generator/sample-flask-htmlx.git
  ```
 
 **Installation instructions.**
