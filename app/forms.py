@@ -1,5 +1,7 @@
+from datetime import datetime
+from email.policy import default
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, TextAreaField, DateTimeField
 
 from wtforms.validators import InputRequired, Length, Email
 
@@ -25,10 +27,11 @@ class SignUpForm(FlaskForm):
 
 class ContactForm(FlaskForm):
     name = StringField("Name", validators=[Length(
-        min=4, message="Name must be 4 or more letters long")])
+        min=4, message="Name must be 4 or more letters long"),InputRequired("Name is required")])
     email = StringField("Email", validators=[Email(
         "Enter a valid email address"), InputRequired("Email is required")])
     subject = StringField("Subject", validators=[
                           InputRequired("Subject is required")])
     message = TextAreaField("Message", validators=[
-                            InputRequired("Subject is required")])
+                            InputRequired("Write a Message")])
+    createdAt = DateTimeField("CreatedAt", default=datetime.now)

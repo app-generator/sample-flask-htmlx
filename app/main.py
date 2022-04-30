@@ -1,8 +1,9 @@
-from crypt import methods
-from flask import Blueprint,render_template,url_for,request
+from flask import Blueprint, redirect,render_template,url_for,request,flash
 from flask_login import current_user,login_required
 from app import db
+from app.models import Contact
 from app.forms import ContactForm
+from datetime import datetime
 
 main = Blueprint('main', __name__)
 
@@ -15,6 +16,12 @@ def dashboard():
             email = form.email.data
             subject = form.subject.data
             message = form.message.data
+
+            new_message  = Contact(name=name,email = email,subject=subject,message=message )
+            db.session.add(new_message)
+            db.session.commit()
+            flash(message="Your feedback has been submitted",category="success")
+            return redirect(url_for('main.dashboard'))
     return  render_template("dashboard.html",form = form)
 
 @main.route('/profile')
