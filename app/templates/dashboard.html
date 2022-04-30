@@ -1,39 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-<nav class="navbar navbar-expand-lg navbar-light sticky-sm-top p-4 bg-white  ">
+<nav class="navbar navbar-expand-md navbar-light sticky-top p-4 bg-white  ">
   <a class="navbar-brand font-black display-1" href="#">Swift Team</a>
-  <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto pe-4">
+  <ul class="navbar-nav ms-auto d-none  d-md-flex pe-4">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">About </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url_for('auth.signin')}}">Signin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{url_for('auth.signup')}}">Signup</a>
+    </li>
+
+  </ul>
+  <!-- Mobile nav -->
+  <div class="offcanvas offcanvas-end m-0 navbar-collapse" id="mobile-nav">
+    <div class="offcanvas-header w-100">
+      <button type="button" class="btn-close text-reset shadow-none float-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <ul class="navbar-nav pt-3 text-center">
       <li class="nav-item active">
-        <a class="nav-link" href="#">About </a>
+        <a class="nav-link" data-bs-dismiss="offcanvas" href="#">About </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url_for('auth.signin')}}">Signin</a>
+        <a class="nav-link" data-bs-dismiss="offcanvas" href="{{url_for('auth.signin')}}">Signin</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url_for('auth.signup')}}">Signup</a>
+        <a class="nav-link" data-bs-dismiss="offcanvas" href="{{url_for('auth.signup')}}">Signup</a>
       </li>
 
     </ul>
   </div>
 </nav>
-<div class="container ">
+<div class="container overflow-hidden">
   {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      {% for message in messages%}
-      <div class="p-2 col-4 offset-4 bg-{{message[0]}} bg-opacity-25 text-{{message[0]}}">
-          {{ message[1] }}
-      </div>
-      {% endfor %}
-    {% endif %}
-    {% endwith %}
-  <div class="container d-flex p-5 align-items-center">
-    <div class="p-4">
+  {% if messages %}
+  {% for message in messages%}
+  <div class="p-2 col-4 offset-4  bg-opacity-25 text-{{message[0]}}">
+    {{ message[1] }}
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+  <div class="container d-md-flex  p-5 align-items-center">
+    <div class="p-4 col-md-6">
       <p class="h1 font-black">Let's scale your business</p>
       <p class="text-dark text-muted h5">Hire professionals who will help your business make 10X your
         previous income.
@@ -41,53 +57,53 @@
       </p>
       <button class="btn btn-primary px-5 py-2 ">Hire Us</button>
     </div>
-    <div class="p-4 ">
-      <img src="https://react-mui-landing-page.appseed-srv1.com/static/media/myteam.25705d76cc71ec380149.jpg"
+    <div class="p-md-4 col-md-6 ">
+      <img class="img-fluid" src="https://pixabay.com/get/ga8e522f66149ed5affad205d739544389eb7c8983b6e2782c308b330113d6a3aac7943762e3cf869618e15de19dd53f4bf994501d5ea93444291cc6c291bc32d47d7d041c3e0f9010667af1c38ee7b8b_1920.jpg"
         height="400" alt="">
     </div>
   </div>
 
-  <div class="container d-flex p-5 align-items-center">
-    <div class="p-4 text-center bg-light m-1 col-4 h-100 rounded">
-      <span class="material-icons h1 font-black p-5">
+  <div class="container features d-md-flex p-5 align-items-center">
+    <div class="p-4 description flex-fill shadow text-center  m-2 col-md-4 h-100 rounded">
+      <span class="material-icons h1 text-primary font-black p-5">
         engineering
       </span>
       <p class="h6 text-muted p-4">Through team work, we collaborate and deliver quality projects of high standards</p>
     </div>
-    <div class="p-4 text-center bg-light m-1 col-4 h-100 rounded">
-      <span class="material-icons h1 font-black p-5">
+    <div class="p-4 description flex-fill shadow text-center  m-2 col-md-4 h-100 rounded">
+      <span class="material-icons h1 text-primary font-black p-5">
         all_inclusive
       </span>
       <p class="h6 text-muted p-4">Solving world problems through various web applications using efficient programs and
         tools</p>
     </div>
-    <div class="p-4 text-center bg-light m-1 col-4 h-100 rounded">
-      <span class="material-icons h1 font-black p-5">
+    <div class="p-4 description flex-fill shadow text-center  m-2 col-md-4 h-100 rounded">
+      <span class="material-icons h1 text-primary font-black p-5">
         paid
       </span>
       <p class="h6 text-muted p-4">Flexible payment plan is applicable to all our services</p>
     </div>
   </div>
 
-  <div class="container d-flex p-5 align-items-center w-100">
-    <div class="p-5 ">
-      <img src="https://react-mui-landing-page.appseed-srv1.com/static/media/bestTeams.5ee3d8171c70441d1cc0.jpg"
+  <div class="container  d-md-flex p-5 align-items-center w-100">
+    <div class="p-md-5 ">
+      <img class="img-fluid" src="https://pixabay.com/get/gad6fe45237c9120ba3d1b58c775e891775af4bb7912877c78db41a15ad5e7415fb88c69452d55b082ea75ac1602251a6cef8b753db2afae097484f4f5739e7fb77ad7743cdcfa8d1dddeabf5129e4acb_1920.jpg"
         height="400" alt="">
     </div>
     <div class="p-4">
       <p class="h1 font-black">We build, We revive</p>
-      <p class="text-dark text-muted h5">Your business needs to be in safe hands at all times. We ensure you
+      <p class=" text-muted h5">Your business needs to be in safe hands at all times. We ensure you
         never run out of customers and not run at loss.
         We are trusted by over 500+ companies to deliver quality marketing campaigns using Digital marketing & Offline
         marketing channels.
       </p>
-      <button class="btn btn-primary px-5 py-2 ">Contact Us</button>
+      <a href="#contactUs" class="btn btn-primary px-5 py-2 ">Contact Us</a>
     </div>
   </div>
 
-  <div class="container d-flex p-5 align-items-center">
-    <div class="p-4 shadow m-1 col-4 h-100 rounded">
-      <p class="h6 text-muted p-4">
+  <div class="container d-md-flex p-md-5 align-items-center">
+    <div class="p-md-5 shadow m-1 flex-fill col-md-4 col-sm-12 h-100 rounded">
+      <p class="h6 text-muted p-3">
         <span class="material-icons">
           format_quote
         </span>
@@ -97,8 +113,8 @@
           format_quote
         </span>
       </p>
-      <div class="d-flex">
-        <img height="50" class="align-self-center rounded-circle me-3"
+      <div class="d-flex p-2">
+        <img  height="50" class="align-self-center rounded-circle me-3"
           src="https://sweta-myteam-website-fm.netlify.app/static/media/avatar-kady.78fc482c.jpg"
           alt="Generic placeholder image">
         <div>
@@ -107,8 +123,8 @@
         </div>
       </div>
     </div>
-    <div class="p-4  shadow m-1 col-4 h-100 rounded">
-      <p class="h6 text-muted p-4">
+    <div class="p-md-5 flex-fill shadow m-1 col-md-4 col-sm-12 h-100 rounded">
+      <p class="h6 text-muted p-3">
         <span class="material-icons">
           format_quote
         </span>
@@ -118,8 +134,8 @@
           format_quote
         </span>
       </p>
-      <div class="d-flex">
-        <img height="50" class="align-self-center rounded-circle me-3"
+      <div class="d-flex p-2">
+        <img  height="50" class="align-self-center rounded-circle me-3"
           src="https://sweta-myteam-website-fm.netlify.app/static/media/avatar-aiysha.e119a0c1.jpg"
           alt="Generic placeholder image">
         <div>
@@ -128,8 +144,8 @@
         </div>
       </div>
     </div>
-    <div class="p-4  shadow m-1 col-4 h-100 rounded">
-      <p class="h6 text-muted p-4"><span class="material-icons">
+    <div class="p-md-5 flex-fill shadow m-1 col-md-4 col-sm-12 h-100 rounded">
+      <p class="h6 text-muted p-3"><span class="material-icons">
           format_quote
         </span>
         Amazing. Our team helped us build an app that delivered a new experience for hiring
@@ -138,8 +154,8 @@
           format_quote
         </span>
       </p>
-      <div class="d-flex">
-        <img height="50" class="align-self-center rounded-circle me-3"
+      <div class="d-flex p-2">
+        <img  height="50" class="align-self-center rounded-circle me-3"
           src="https://sweta-myteam-website-fm.netlify.app/static/media/avatar-arthur.098c2e26.jpg"
           alt="Generic placeholder image">
         <div>
@@ -150,10 +166,11 @@
     </div>
   </div>
 
-  <div class="container d-flex p-5 align-items-center justify-content-center w-100">
-    
-    <form class="col-6" hx-post="{{url_for('main.dashboard')}}" method="post"  novalidate>
-      <p class="text-center font-black h2">Contact Us</p>
+  <div class="container d-flex flex-sm-column p-md-5 mt-3 align-items-center justify-content-center w-100">
+
+    <form class="col-md-6 col-10" id="contactUs" hx-post="{{url_for('main.dashboard')}}" hx-target=".content" hx-swap="innerHTML" method="post"
+      novalidate>
+      <p class="text-center font-black p-3 h2">Contact Us</p>
       {{form.csrf_token}}
       <div class="form-input p-1">
         {{form.name.label}}
@@ -194,25 +211,28 @@
 
       <div class="p-2 col-md-12 text-center">
         <button class="btn py-2 px-5  rounded btn-primary h1" type="submit">Submit</button>
+
       </div>
 
     </form>
   </div>
 
 </div>
-<footer>
+<footer class="bg-primary text-light p-3">
   <div class="container p-4">
     <h6 class="text-center">&copy;2022</h6>
   </div>
 </footer>
+
 <script>
   window.addEventListener('scroll', (e) => {
     const nav = document.querySelector('.navbar');
     if (window.pageYOffset > 0) {
-      nav.classList.add("shadow");
+      nav.classList.add("shadow"); 
     } else {
       nav.classList.remove("shadow");
     }
   });
+
 </script>
 {% endblock %}
