@@ -38,7 +38,7 @@ To get started with the application in the machine
 
 ## ✨ **Installation**
 
-> 👉 Step 1 - **cloning the repository.**
+> 👉 Step 1 - **Cloning the repository.**
 
 ```bash
 $ git clone git@github.com:app-generator/sample-flask-htmlx.git 
@@ -48,7 +48,7 @@ $ git clone https://github.com/app-generator/sample-flask-htmlx.git
 
 <br />
 
-> 👉 Step 2 - Prepare Environment (create virtual environment)
+> 👉 Step 2 - **Prepare Environment** (create virtual environment)
 
 ```bash
 $ # Virtualenv modules installation (Unix based systems)
@@ -62,7 +62,7 @@ $ # .\env\Scripts\activate
 
 <br />
 
-> 👉 Step 3 - Install Dependencies
+> 👉 Step 3 - **Install Dependencies**
 
 ```bash
 $ # Install requirements
@@ -71,7 +71,7 @@ $ pip3 install -r requirements.txt
 
 <br />
 
-> 👉 Step 4 - Create Database
+> 👉 Step 4 - **Create Database**
 
 ```bash
 $ flask shell    # launch Flask Shell
@@ -82,7 +82,7 @@ $ flask shell    # launch Flask Shell
 
 <br />
 
-> 👉 Step 4 - Create Database
+> 👉 Step 4 - **Create Database**
 
 ```bash
 $ flask run
