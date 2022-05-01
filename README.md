@@ -1,94 +1,120 @@
-#  1. **sample-flask-htmlx**
-Sample flask + htmx implementation 
+#  Flask HTMLx Sample
 
-**Table of contents**
-- [1. **sample-flask-htmlx**](#1-sample-flask-htmlx)
-  - [1.1. **Prerequisites**](#11-prerequisites)
-  - [1.2. **Installation**](#12-installation)
-  - [1.3. **Running the application**](#13-running-the-application)
+Open-Source sample that uses Flask as the backend framework and HTMLx for the frontend logic. For newcomers, **Flask** is a leading web framework powered by Python and **HTMLx** is a lighweight JS utility library that allows to access AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML. 
 
+> Features: 
 
-## 1.1. **Prerequisites** 
+- `Up-to-date` Dependencies
+- Tech Stack:
+  - `Flask`: manages authentication and routing
+  - `HTMLx`: manages forms submit (no JS)
+- Auth: Sign IN, Sign UP
+- Misc: SQLite DB, SQLAlchemy, Forms Validation
+
+<br />
+
+## **Prerequisites** 
+
 To get started with the application in the machine
 
-  1. Python3 - Make sure python3 and highr=er is installed on your system before proceeding to installation instructions.
-  2. Git - Download and install Git.OSX and linux comes preinstalled with Git. Download and install Git in your windows machine if not installed yet.
-  3. Pip - We will use pip to install required packages to be used in the project. 
-   
+- `Python3` - Make sure python3 and highr=er is installed on your system before proceeding to installation instructions.
+- `Git` - Download and install Git.OSX and linux comes preinstalled with Git. Download and install Git in your windows machine if not installed yet.
+- `Pip` - We will use pip to install required packages to be used in the project. 
 
-## 1.2. **Installation**
-**cloning the repository.**
+<br />
 
-open terminal or command prompt and enter the following command.
+## **Installation**
 
-``` 
-$ git clone git@github.com:app-generator/sample-flask-htmlx.git
+> Step 1 - **cloning the repository.**
 
- ```
-
- or use https:
-
- ```
- $ git clone https://github.com/app-generator/sample-flask-htmlx.git
- ```
-
-**Installation instructions.**
-
-Create a virtual environment before installing the packages. 
-
-```
-$ virtualenv env 
-
+```bash
+$ git clone git@github.com:app-generator/sample-flask-htmlx.git 
+// OR via HTTPS
+$ git clone https://github.com/app-generator/sample-flask-htmlx.git
 ```
 
-Activate the virtual environment
+<br />
 
-For unix users:
+> Step 2 - Prepare Environment (create virtual environment)
 
-```
-$ source env/bin/activate 
-
-```
-
-For windows users:
-
-``` 
-C: \Users\username\path to project > env\Scripts\activate 
-
+```bash
+$ # Virtualenv modules installation (Unix based systems)
+$ virtualenv env
+$ source env/bin/activate
+$
+$ # Virtualenv modules installation (Windows based systems)
+$ # virtualenv env
+$ # .\env\Scripts\activate
 ```
 
-Migrate the database using python console from terminal or command prompt.
+<br />
 
-``` 
-$ python 
-```
- or 
+> Step 3 - Install Dependencies
 
-```
- $ python3 
+```bash
+$ # Install requirements
+$ pip3 install -r requirements.txt
 ```
 
-``` 
->>> from app import create_app,db,models 
+<br />
 
->>> db.create_all(app=create_app()) 
+> Step 4 - Create Database
+
+```bash
+$ flask shell    # launch Flask Shell
+>>> 
+>>> from app import db
+>>> db.create_all()
 ```
 
+<br />
 
-## 1.3. **Running the application**
-With all the bove steps done its time to run the application. The application is run with the command:
+> Step 4 - Create Database
 
-```
-$ python app.py 
-
-```
-or
-
-``` 
-$  python3 app.py 
-
+```bash
+$ flask run
 ```
 
-Flask server will run on port ``` 5000 ```
+The app should be up & running on address `http://localhost:5000`
 
-open the browser and enter the url ``` http://localhost:5000/ ```
+<br />
+
+## **HTMLx** 
+
+All forms managed by the app use HTMLx directives. Here is the Login Form Source Code and used HTMLx directives: 
+
+- [hx-swap](https://htmx.org/attributes/hx-swap/)  
+- [hx-post](https://htmx.org/attributes/hx-post/) 
+- [hx-target](https://htmx.org/attributes/hx-target/)
+
+<br />
+
+```html
+    <form  hx-swap="outerHTML" 
+           hx-post="{{ url_for('auth.signin') }}" 
+           hx-push-url="true" 
+           hx-target=".content" 
+           class="p-5 bg-white shadow mh-100 col-sm-8 col-md-6 col-lg-4" novalidate >
+        
+        <p class="h3 text-center p-2">SignIn</p>
+        
+        <!-- Truncated content -->
+
+        <div class="form-input p-1">
+            {{form.email.label}}
+            {{form.email(class_="form-control")}}
+        </div>
+
+        <div class="form-input p-1">
+            {{form.password.label}}
+            {{form.password(class_="form-control")}}
+        </div>
+
+        <button class="btn p-2 px-3 rounded btn-primary h1" type="submit">Sign In</button>
+    </form>
+```        
+
+<br />
+
+---
+**Flask HTMLx Sample** - Open-Source Sample provided by [AppSeed](https://appseed.us)

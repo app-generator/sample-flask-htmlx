@@ -1,4 +1,8 @@
-from crypt import methods
+# -*- encoding: utf-8 -*-
+"""
+Copyright (c) 2019 - present AppSeed.us
+"""
+
 from flask import Blueprint,render_template,url_for,redirect,request,flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from app  import db
@@ -39,7 +43,7 @@ def signup():
             password1 = form.password1.data
             password2 = form.password2.data
 
-            if password1!=password2:
+            if password1 != password2:
                 form.password2.errors.append("Passwords do not match")
                 return redirect(url_for('auth.signup'))
 

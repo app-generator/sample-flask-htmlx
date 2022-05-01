@@ -7,55 +7,55 @@
     data-bs-target="#mobile-nav" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <!-- Desktop Nav -->
   <ul class="navbar-nav ms-auto d-none  d-md-flex pe-4">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">About </a>
-    </li>
+    
     <li class="nav-item">
-      <a class="nav-link" href="{{url_for('auth.signin')}}">Signin</a>
+      <a class="nav-link" href="{{url_for('auth.signin')}}">SignIN</a>
     </li>
+
     <li class="nav-item">
-      <a class="nav-link" href="{{url_for('auth.signup')}}">Signup</a>
+      <a class="nav-link" href="{{url_for('auth.signup')}}">Register</a>
     </li>
 
   </ul>
+
   <!-- Mobile nav -->
   <div class="offcanvas offcanvas-end m-0 navbar-collapse" id="mobile-nav">
+
     <div class="offcanvas-header w-100">
       <button type="button" class="btn-close text-reset shadow-none float-start" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+
     <ul class="navbar-nav pt-3 text-center">
-      <li class="nav-item active">
-        <a class="nav-link" data-bs-dismiss="offcanvas" href="#">About </a>
+      
+      <li class="nav-item">
+        <a class="nav-link" data-bs-dismiss="offcanvas" href="{{url_for('auth.signin')}}">SignIN</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-bs-dismiss="offcanvas" href="{{url_for('auth.signin')}}">Signin</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-bs-dismiss="offcanvas" href="{{url_for('auth.signup')}}">Signup</a>
+        <a class="nav-link" data-bs-dismiss="offcanvas" href="{{url_for('auth.signup')}}">Register</a>
       </li>
 
     </ul>
+
   </div>
 </nav>
 <div class="container overflow-hidden">
-  {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-  {% for message in messages%}
-  <div class="p-2 col-4 offset-4  bg-opacity-25 text-{{message[0]}}">
-    {{ message[1] }}
-  </div>
-  {% endfor %}
-  {% endif %}
-  {% endwith %}
+
   <div class="container d-md-flex  p-5 align-items-center">
     <div class="p-4 col-md-6">
-      <p class="h1 font-black">Let's scale your business</p>
-      <p class="text-dark text-muted h5">Hire professionals who will help your business make 10X your
-        previous income.
-        With over 5years experience in Marketing & Business strategy, we are your best client.
+      <p class="h1 font-black">
+        Flask & HTMLx Sample        
       </p>
-      <button class="btn btn-primary px-5 py-2 ">Hire Us</button>
+      <p class="text-dark text-muted h5">
+        Open-Source sample powered by Flask and HTMLx for all formsmanaged by the app: 
+        Login, Register and Contact.    
+      </p>
+      <br />
+      <a target="_blank" href="https://github.com/app-generator/sample-flask-htmlx" class="btn btn-primary px-5 py-2 ">Sources</a> 
+      &nbsp; &nbsp; 
+      <a target="_blank" href="http://appseed.us/support/">Get Support</a>
     </div>
     <div class="p-md-4 col-md-6 ">
       <img class="img-fluid" src="https://pixabay.com/get/ga8e522f66149ed5affad205d739544389eb7c8983b6e2782c308b330113d6a3aac7943762e3cf869618e15de19dd53f4bf994501d5ea93444291cc6c291bc32d47d7d041c3e0f9010667af1c38ee7b8b_1920.jpg"
@@ -168,6 +168,16 @@
 
   <div class="container d-flex flex-sm-column p-md-5 mt-3 align-items-center justify-content-center w-100">
 
+    <p class="text-center bg-opacity-25">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for message in messages%}
+            {{ message[1] }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </p>
+
     <form class="col-md-6 col-10" id="contactUs" hx-post="{{url_for('main.dashboard')}}" hx-target=".content" hx-swap="innerHTML" method="post"
       novalidate>
       <p class="text-center font-black p-3 h2">Contact Us</p>
@@ -220,7 +230,11 @@
 </div>
 <footer class="bg-primary text-light p-3">
   <div class="container p-4">
-    <h6 class="text-center">&copy;2022</h6>
+    <h6 class="text-center">
+        Provided by <a class="text-white" target="_blank" href="https://appseed.us">AppSeed</a>
+        <br />        
+        Open-Source Sample - Buit with Flask and HTMLx
+    </h6>
   </div>
 </footer>
 
