@@ -1,6 +1,6 @@
 #  Flask HTMLx Sample
 
-Open-Source sample that uses Flask as the backend framework and HTMLx for the frontend logic. For newcomers, **Flask** is a leading web framework powered by Python and **HTMLx** is a lighweight JS utility library that allows to access AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML. 
+Open-Source sample that uses Flask as the backend framework and HTMLx for the frontend logic. For newcomers, `Flask` is a leading web framework powered by Python and `HTMLx` is a lightweight JS utility library that allows accessing AJAX, CSS Transitions, WebSockets, and Server-Sent Events directly in HTML. 
 
 <br />
 
