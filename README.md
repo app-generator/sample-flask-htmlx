@@ -2,18 +2,31 @@
 
 Open-Source sample that uses Flask as the backend framework and HTMLx for the frontend logic. For newcomers, **Flask** is a leading web framework powered by Python and **HTMLx** is a lighweight JS utility library that allows to access AJAX, CSS Transitions, WebSockets and Server Sent Events directly in HTML. 
 
-> Features: 
+<br />
+
+> **Features**
 
 - `Up-to-date` Dependencies
 - Tech Stack:
   - `Flask`: manages authentication and routing
   - `HTMLx`: manages forms submit (no JS)
-- Auth: Sign IN, Sign UP
-- Misc: SQLite DB, SQLAlchemy, Forms Validation
+- `Auth`: Sign IN, Sign UP
+- `Misc`: SQLite DB, SQLAlchemy, Forms Validation
 
 <br />
 
-## **Prerequisites** 
+> **Links**
+
+- 👉 More Flask Apps and Dashboards provided by AppSeed
+- 👉 Free [Support](https://appseed.us/support/) via Email and [Discord](https://discord.gg/fZC6hup).
+
+<br />
+
+![Flask HTMLx Sample - Open-Source Sample provided by AppSeed](https://user-images.githubusercontent.com/51070104/166150793-a2027357-a9fb-4c0d-b024-ee9d9e0e071b.gif)
+
+<br />
+
+## ✨ **Prerequisites** 
 
 To get started with the application in the machine
 
@@ -23,9 +36,9 @@ To get started with the application in the machine
 
 <br />
 
-## **Installation**
+## ✨ **Installation**
 
-> Step 1 - **cloning the repository.**
+> 👉 Step 1 - **cloning the repository.**
 
 ```bash
 $ git clone git@github.com:app-generator/sample-flask-htmlx.git 
@@ -35,7 +48,7 @@ $ git clone https://github.com/app-generator/sample-flask-htmlx.git
 
 <br />
 
-> Step 2 - Prepare Environment (create virtual environment)
+> 👉 Step 2 - Prepare Environment (create virtual environment)
 
 ```bash
 $ # Virtualenv modules installation (Unix based systems)
@@ -49,7 +62,7 @@ $ # .\env\Scripts\activate
 
 <br />
 
-> Step 3 - Install Dependencies
+> 👉 Step 3 - Install Dependencies
 
 ```bash
 $ # Install requirements
@@ -58,7 +71,7 @@ $ pip3 install -r requirements.txt
 
 <br />
 
-> Step 4 - Create Database
+> 👉 Step 4 - Create Database
 
 ```bash
 $ flask shell    # launch Flask Shell
@@ -69,7 +82,7 @@ $ flask shell    # launch Flask Shell
 
 <br />
 
-> Step 4 - Create Database
+> 👉 Step 4 - Create Database
 
 ```bash
 $ flask run
@@ -79,7 +92,7 @@ The app should be up & running on address `http://localhost:5000`
 
 <br />
 
-## **HTMLx** 
+## ✨ **HTMLx** 
 
 All forms managed by the app use HTMLx directives. Here is the Login Form Source Code and used HTMLx directives: 
 
