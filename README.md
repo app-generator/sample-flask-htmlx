@@ -88,6 +88,14 @@ $ flask shell    # launch Flask Shell
 $ flask run
 ```
 
+<br />
+
+> 👉 Step 5 - **Start the APP**
+
+```bash
+$ flask run
+```
+
 The app should be up & running on address `http://localhost:5000`
 
 <br />
