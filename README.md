@@ -1,6 +1,6 @@
-#  Flask HTMLx Sample
+# [Flask HTMLx Sample](https://blog.appseed.us/flask-and-htmlx-open-source-sample/)
 
-Open-Source sample that uses Flask as the backend framework and HTMLx for the frontend logic. For newcomers, `Flask` is a leading web framework powered by Python and `HTMLx` is a lightweight JS utility library that allows accessing AJAX, CSS Transitions, WebSockets, and Server-Sent Events directly in HTML. 
+Open-Source sample that uses **[Flask and HTMLx](https://blog.appseed.us/flask-and-htmlx-open-source-sample/)** for the frontend logic. For newcomers, `Flask` is a leading web framework powered by Python and `HTMLx` is a lightweight JS utility library that allows accessing AJAX, CSS Transitions, WebSockets, and Server-Sent Events directly in HTML. 
 
 <br />
 
@@ -130,4 +130,4 @@ All forms managed by the app use HTMLx directives. Here is the Login Form Source
 <br />
 
 ---
-**Flask HTMLx Sample** - Open-Source Sample provided by [AppSeed](https://appseed.us)
+**[Flask HTMLx Sample](https://blog.appseed.us/flask-and-htmlx-open-source-sample/)** - Open-Source Sample provided by [AppSeed](https://appseed.us)
