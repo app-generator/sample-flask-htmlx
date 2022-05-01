@@ -17,7 +17,7 @@ Open-Source sample that uses Flask as the backend framework and HTMLx for the fr
 
 > **Links**
 
-- 👉 More Flask Apps and Dashboards provided by AppSeed
+- 👉 More [Flask Apps](https://appseed.us/apps/flask/) and [Dashboards](https://appseed.us/admin-dashboards/flask/) provided by AppSeed
 - 👉 Free [Support](https://appseed.us/support/) via Email and [Discord](https://discord.gg/fZC6hup).
 
 <br />
